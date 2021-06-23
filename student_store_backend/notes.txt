@@ -2,10 +2,26 @@ STEP 2:
 
  Create two new routes files - routes/orders.js and routes/store.js
  Create two new models files - models/order.js and models/store.js
- In the models/store.js file import the db, create a Store class, and export it. Add a single static, async method to the class called listProducts. That method should run a SQL query that searches the database for all products and returns a list of them.
- Back in the routes/store.js file, import the Store model, create a new router, and export it. Add a single GET request at the / endpoint that calls the listProducts method of the Store model and returns the results as the products key of an object. This is the main endpoint the frontend will request to receive all products for the store.
- In the models/order.js file import the db, create an Order class, and export it. Add two static, async methods to the class:
-    The listOrdersForUser method will return all orders that the authenticated user has created. Leave it empty for now except for some comments explaining what will be done.
-    The createOrder method will take a user's order and store it in the database. Leave it empty for now except for some comments explaining what will be done.
- Back in the routes/orders.js file, create GET and POST requests at the / endpoint. The GET request should call the listOrdersForUser method and the POST request should call the createOrder method.
+
+ In the models/store.js file import the db, create a Store class, and export it.
+  Add a single static, async method to the class called listProducts. 
+  That method should run a SQL query that searches the database for all 
+  products and returns a list of them.
+
+ Back in the routes/store.js file, import the Store model, create a new router,
+  and export it. Add a single GET request at the / endpoint that calls the 
+  listProducts method of the Store model and returns the results as the products 
+  key of an object. This is the main endpoint the frontend will request to 
+  receive all products for the store.
+
+ In the models/order.js file import the db, create an Order class, and export it.
+  Add two static, async methods to the class:
+    The listOrdersForUser method will return all orders that the authenticated
+     user has created. Leave it empty for now except for some comments explaining
+      what will be done.
+    The createOrder method will take a user's order and store it in the database. 
+     Leave it empty for now except for some comments explaining what will be done.
+     
+ Back in the routes/orders.js file, create GET and POST requests at the / endpoint. 
+  The GET request should call the listOrdersForUser method and the POST request should call the createOrder method.
  Add both routes to the server.js file below the auth routes.
