@@ -9,14 +9,16 @@
 */
 
 const express = require("express")
-const User = require("../models/store")
+const Store = require("../models/store")
 const router = express.Router()
 
 router.get("/", async (req, res, next) => {
   try {
     //return all the products
-    const user = await User.login(req.body)
-    return res.status(200).json({ user })
+    //call the list products method of the Store model
+    const products = await Store.listProducts(req.body)
+    //returns the results as the products key of an object
+    return res.status(200).json({ products })
   } catch (err) {
     next(err)
   }

@@ -12,11 +12,11 @@
 const db = require("../db")
 
 class Order {
-    static async listOrdersForUser({customer_id }){
+    static async listOrdersForUser({id, customer_id }){
        //will return all orders that the authenticated user has created
     }
 
-    static async CreateOrder({ order_id, quantity, product_id, discount }){
+    static async CreateOrder({ order_id, product_id, discount }){
         //method will take a user's order and store it in the database
     }
 }
